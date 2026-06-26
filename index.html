@@ -12,7 +12,52 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
+<div style="padding:20px; background:#111; color:white; text-align:center;">
 
+<h2>💼 Candidatura DML</h2>
+
+<input id="nome" placeholder="Nome"><br><br>
+<input id="telefone" placeholder="Telefone"><br><br>
+
+<select id="vaga">
+  <option>Offshore</option>
+  <option>Rigger</option>
+  <option>Motorista</option>
+  <option>Soldador</option>
+</select><br><br>
+
+<select id="pagamento">
+  <option>eMola</option>
+  <option>Transferência</option>
+</select><br><br>
+
+<button onclick="enviar()" style="padding:10px; background:green; color:white;">
+Candidatar-se
+</button>
+
+</div><script>
+function enviar(){
+
+  let nome = document.getElementById("nome").value;
+  let telefone = document.getElementById("telefone").value;
+  let vaga = document.getElementById("vaga").value;
+  let pagamento = document.getElementById("pagamento").value;
+
+  let msg =
+`Nova candidatura DML:
+Nome: ${nome}
+Telefone: ${telefone}
+Vaga: ${vaga}
+Pagamento: ${pagamento}`;
+
+  window.open(
+    "https://wa.me/25884XXXXXXX?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+
+  alert("Candidatura enviada!");
+}
+</script>873414482
 body{
 background:#f8f9fb;
 color:#222;
